@@ -57,13 +57,28 @@ jurishub --help
 - Não acessa billing, faturas, assinaturas ou checkout.
 - Não acessa dados de outra organização.
 
-## Para usar com um agente
+## Copie e cole no seu agente
 
-Envie este repositório ao agente e use a instrução abaixo:
+Use este texto no agente que vai operar a CLI:
 
-> Use a CLI oficial do JurisHUB. Instale com `npm i -g @jurishub/cli`, rode `jurishub status` e consulte apenas dados em modo somente leitura. Nunca peça, imprima ou salve a chave de API. Se precisar autenticar, peça para o usuário executar `jurishub login` localmente.
+```text
+Você vai usar a CLI oficial do JurisHUB.
 
-Instruções específicas para agentes ficam em [AGENTS.md](AGENTS.md). Se o seu agente suporta skills, use também [skills/jurishub-cli/SKILL.md](skills/jurishub-cli/SKILL.md).
+1. Instale a CLI com:
+   npm i -g @jurishub/cli
+
+2. Peça para eu autenticar este computador com:
+   jurishub login
+
+3. Só depois que eu concluir o login, rode:
+   jurishub status
+
+4. Consulte apenas dados em modo somente leitura.
+
+Nunca peça, imprima, registre ou salve minha chave de API.
+```
+
+Instruções técnicas para agentes ficam em [AGENTS.md](AGENTS.md). Se o seu agente suporta skills, use também [skills/jurishub-cli/SKILL.md](skills/jurishub-cli/SKILL.md).
 
 ## Segurança da chave
 
