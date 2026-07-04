@@ -1,53 +1,78 @@
 # JurisHUB CLI
 
-CLI oficial para consultar dados do JurisHUB pela API publica V1.
+Consulte dados do JurisHUB por terminal, com seguranca, em modo somente leitura.
+
+Este repo e o link publico para clientes e agentes entenderem como instalar, autenticar e usar a CLI do JurisHUB sem acessar o repositorio principal do produto.
+
+> Status: piloto controlado. A instalacao por npm depende da publicacao do pacote `@jurishub/cli` e da release binaria correspondente.
+
+## Para que serve
+
+A CLI foi feita para agentes, automacoes e times operacionais que precisam consultar informacoes do JurisHUB sem navegar pela interface web.
+
+Ela permite consultar:
+
+- contatos;
+- casos e pipeline;
+- agenda;
+- relatorios operacionais;
+- diagnostico basico da conexao.
+
+Ela nao cria, altera, exclui, envia mensagens nem acessa dados fora da organizacao autorizada pela chave.
 
 ## Instalacao
+
+Quando o pacote estiver liberado:
 
 ```bash
 npm i -g @jurishub/cli
 ```
 
-Depois configure a chave de acesso:
+Depois autentique neste computador:
 
 ```bash
 jurishub login
 jurishub status
 ```
 
-O comando `login` pede a chave no terminal. Nao envie a chave em argumentos de comando, arquivos, prints ou prompts de agente.
+O `login` pede a chave no terminal. Nao envie a chave em argumentos de comando, arquivos, prints ou prompts de agente.
 
-## Comandos principais
+## Primeiros comandos
 
 ```bash
 jurishub status
-jurishub contatos listar
 jurishub contatos buscar "Maria"
 jurishub contatos buscar "11999999999"
-jurishub contatos ver <id>
 jurishub casos listar
-jurishub casos parados
 jurishub agenda listar
 jurishub relatorio
 ```
 
-## Para enviar a um agente
+Para ver todos os comandos disponiveis:
 
-Envie este repositorio e diga:
+```bash
+jurishub --help
+```
 
-> Instale a CLI do JurisHUB com npm, rode `jurishub status` e consulte somente dados read-only. Nunca peça nem imprima a chave de API; se precisar autenticar, peça para o usuario executar `jurishub login` localmente.
+## Envie isto ao seu agente
 
-Instrucoes detalhadas para agentes ficam em [AGENTS.md](AGENTS.md).
+Copie o texto abaixo para o agente que vai usar a CLI:
+
+> Use a CLI oficial do JurisHUB. Instale com `npm i -g @jurishub/cli`, rode `jurishub status` e consulte apenas dados em modo read-only. Nunca peca, imprima ou salve a chave de API. Se precisar autenticar, peca para o usuario executar `jurishub login` localmente.
+
+Instrucoes especificas para agentes ficam em [AGENTS.md](AGENTS.md).
 
 ## Escopo do piloto
 
 - Somente leitura.
 - Sem comandos de escrita.
 - Sem OmniChat.
-- Sem billing/financeiro.
+- Sem billing ou financeiro.
 - Sem MCP.
-- Saida JSON por padrao; use `--human` quando quiser leitura humana.
+- Saida JSON por padrao; use `--human` para leitura humana.
 
-## Problemas
+## Problemas comuns
 
-Se a chave expirar, for revogada ou retornar erro de autorizacao, crie uma nova chave em JurisHUB > Configuracoes > Seguranca > Chaves da API publica.
+Se a chave expirar, for revogada ou retornar erro de autorizacao, gere uma nova chave em:
+
+`JurisHUB > Configuracoes > Seguranca > Chaves da API publica`

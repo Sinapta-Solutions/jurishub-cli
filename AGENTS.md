@@ -1,11 +1,17 @@
 # Instrucoes Para Agentes
 
-Use a CLI do JurisHUB apenas para consultas read-only autorizadas pelo usuario.
+Voce esta operando a CLI publica do JurisHUB. Use-a apenas para consultas autorizadas, em modo somente leitura.
+
+## Objetivo
+
+Consultar dados do JurisHUB para ajudar o usuario a entender contatos, casos, agenda e relatorios operacionais.
+
+Nao tente administrar o JurisHUB por esta CLI. Ela nao e uma interface de escrita.
 
 ## Setup
 
 1. Verifique Node.js e npm.
-2. Instale:
+2. Instale a CLI:
 
 ```bash
 npm i -g @jurishub/cli
@@ -17,20 +23,21 @@ npm i -g @jurishub/cli
 jurishub login
 ```
 
-4. Rode o diagnostico:
+4. Confirme que a conexao esta funcionando:
 
 ```bash
 jurishub status
 ```
 
-## Regras
+## Regras de seguranca
 
-- Nunca solicite a chave de API em chat se o usuario puder rodar `jurishub login`.
+- Nunca peca a chave de API em chat se o usuario puder rodar `jurishub login`.
 - Nunca salve a chave em repo, documento, log, print ou arquivo compartilhado.
 - Nunca passe a chave como argumento de comando.
+- Nunca tente contornar permissao, tenant, rate limit ou erro de autorizacao.
 - Use somente comandos read-only.
 - Prefira JSON para automacao.
-- Use `--human` apenas para mostrar resultado para uma pessoa.
+- Use `--human` apenas quando for mostrar o resultado para uma pessoa.
 
 ## Comandos permitidos
 
@@ -62,7 +69,7 @@ jurishub agenda listar
 jurishub relatorio
 ```
 
-Se `contatos buscar` retornar muitos itens, peca ao usuario mais contexto antes de abrir um detalhe por ID.
+Se `contatos buscar` retornar muitos itens, peca mais contexto antes de abrir um detalhe por ID.
 
 ## Fora do escopo
 
@@ -71,4 +78,4 @@ Se `contatos buscar` retornar muitos itens, peca ao usuario mais contexto antes 
 - Consultar conversas, anexos ou midia.
 - Consultar billing, faturas, assinatura ou checkout.
 - Usar MCP.
-- Tentar contornar permissao, tenant ou rate limit.
+- Fazer scraping, fuzzing, carga ou teste de abuso.
