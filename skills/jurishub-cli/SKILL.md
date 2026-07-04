@@ -5,7 +5,7 @@ description: "JurisHUB CLI: use to install @jurishub/cli, authenticate with juri
 
 # JurisHUB CLI
 
-Use this skill to operate the public JurisHUB CLI in read-only mode.
+Use this skill to operate the public JurisHUB CLI.
 
 ## Install
 
@@ -19,7 +19,6 @@ Done when `jurishub status` succeeds.
 
 ## Rules
 
-- Use read-only commands only.
 - Never save or print the API key.
 - Never pass the API key as a command argument.
 - Never try to bypass permissions, tenant isolation, rate limits, or authorization errors.

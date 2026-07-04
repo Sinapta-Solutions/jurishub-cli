@@ -73,7 +73,7 @@ Você vai usar a CLI oficial do JurisHUB.
 3. Só depois que eu concluir o login, rode:
    jurishub status
 
-4. Consulte apenas dados em modo somente leitura.
+4. Use os comandos necessários para consultar contatos, casos, agenda e relatórios.
 
 Nunca peça, imprima, registre ou salve minha chave de API.
 ```

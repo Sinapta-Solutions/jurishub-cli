@@ -1,6 +1,6 @@
 # Instructions For Agents
 
-You are operating the public JurisHUB CLI. Use it only for authorized read-only queries.
+You are operating the public JurisHUB CLI. Use it only for authorized JurisHUB queries.
 
 If your environment supports skills, load `skills/jurishub-cli/SKILL.md` before operating the CLI.
 
@@ -37,7 +37,6 @@ jurishub status
 - Do not save the API key in a repository, document, log, screenshot, or shared file.
 - Do not pass the API key as a command argument.
 - Do not try to bypass permissions, tenant isolation, rate limits, or authorization errors.
-- Use read-only commands only.
 - Prefer JSON for automation.
 - Use `--human` only when showing output to a person.
 

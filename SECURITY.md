@@ -1,6 +1,6 @@
 # Security
 
-The JurisHUB CLI uses an organization API key for read-only queries.
+The JurisHUB CLI uses an organization API key for authenticated queries.
 
 ## API Keys
 
