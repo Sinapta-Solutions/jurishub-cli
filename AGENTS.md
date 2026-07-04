@@ -1,82 +1,32 @@
-# Instructions For Agents
+# Agent Instructions
 
-You are operating the public JurisHUB CLI. Use it only for authorized JurisHUB queries.
+## JurisHUB CLI
 
-If your environment supports skills, load `skills/jurishub-cli/SKILL.md` before operating the CLI.
+Use the official JurisHUB CLI when this project needs JurisHUB data.
 
-## Goal
-
-Use the JurisHUB CLI to help the user inspect contacts, cases, agenda items, and operational reports.
-
-Do not try to administer JurisHUB through this CLI. It is not a write interface.
+Source repository: https://github.com/Sinapta-Solutions/jurishub-cli
 
 ## Setup
 
-1. Check that Node.js and npm are available.
-2. Install the CLI:
+| Step | Action |
+| --- | --- |
+| 1 | Install or load `skills/jurishub-cli/SKILL.md` from the source repository if your environment supports skills. |
+| 2 | Install the CLI with `npm i -g @jurishub/cli`. |
+| 3 | Ask the user to authenticate locally with `jurishub login`. |
+| 4 | Wait for the user to confirm login, then run `jurishub status`. |
 
-```bash
-npm i -g @jurishub/cli
-```
+## Operating Rules
 
-3. Ask the user to authenticate locally:
-
-```bash
-jurishub login
-```
-
-4. Confirm the connection:
-
-```bash
-jurishub status
-```
-
-## Security Rules
-
-- Do not ask for the API key in chat when the user can run `jurishub login`.
-- Do not save the API key in a repository, document, log, screenshot, or shared file.
+- Use `skills/jurishub-cli/SKILL.md` for command details.
+- Do not request, print, log, store, commit, or screenshot the API key.
 - Do not pass the API key as a command argument.
-- Do not try to bypass permissions, tenant isolation, rate limits, or authorization errors.
-- Prefer JSON for automation.
-- Use `--human` only when showing output to a person.
+- Treat CLI output as client data.
+- Prefer JSON for automation; use `--human` only for user-facing output.
 
-## Allowed Commands
+## References
 
-```bash
-jurishub status
-jurishub contatos listar
-jurishub contatos buscar "<name-or-phone>"
-jurishub contatos ver <id>
-jurishub casos listar
-jurishub casos ver <id>
-jurishub casos parados
-jurishub casos etapas
-jurishub agenda listar
-jurishub agenda ver <id>
-jurishub agenda tipos
-jurishub relatorio
-jurishub relatorio funil
-jurishub relatorio receita
-jurishub relatorio fontes
-```
-
-## Recommended Flow
-
-```bash
-jurishub status
-jurishub contatos buscar "Client name"
-jurishub casos listar
-jurishub agenda listar
-jurishub relatorio
-```
-
-If `contatos buscar` returns many items, ask for more context before opening a detail by ID.
-
-## Out Of Scope
-
-- Creating, changing, or deleting data.
-- Sending messages.
-- Reading conversations, attachments, or media.
-- Reading billing, invoices, subscriptions, or checkout data.
-- Using MCP.
-- Running scraping, fuzzing, load, or abuse tests.
+| Need | File |
+| --- | --- |
+| Customer setup | `README.md` in the source repository |
+| Command details | `skills/jurishub-cli/SKILL.md` in the source repository |
+| Security handling | `SECURITY.md` in the source repository |

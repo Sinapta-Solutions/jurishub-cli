@@ -1,4 +1,4 @@
 interface:
   display_name: "JurisHUB CLI"
-  short_description: "Use the public JurisHUB CLI safely."
-  default_prompt: "Use jurishub-cli to install and operate the public JurisHUB CLI."
+  short_description: "Set up and use the public JurisHUB CLI safely."
+  default_prompt: "Use jurishub-cli to set up project instructions, authenticate locally, and operate the public JurisHUB CLI."

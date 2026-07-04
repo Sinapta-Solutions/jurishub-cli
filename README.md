@@ -9,23 +9,31 @@ Este é o repositório oficial de instalação e uso da CLI pública do JurisHUB
 Na maioria dos casos, basta copiar o bloco abaixo e enviar ao agente que vai usar a CLI:
 
 ```text
-Você vai usar a CLI oficial do JurisHUB.
+Você vai preparar este projeto para usar a CLI oficial do JurisHUB.
 
-1. Instale a CLI:
+Use este repositório como fonte:
+https://github.com/Sinapta-Solutions/jurishub-cli
+
+1. Instale ou carregue a skill pública, se o seu ambiente suportar skills:
+   skills/jurishub-cli/SKILL.md
+
+2. Adicione a seção JurisHUB CLI de AGENTS.md ao AGENTS.md do projeto, ou ao arquivo equivalente de instruções do agente.
+
+3. Instale a CLI:
    npm i -g @jurishub/cli
 
-2. Depois da instalação, peça para eu autenticar este computador:
+4. Depois da instalação, peça para eu autenticar este computador:
    jurishub login
 
-3. Aguarde eu concluir o login. Só depois rode:
+5. Aguarde eu confirmar que o login terminou. Só depois rode:
    jurishub status
 
-4. Use os comandos necessários para consultar contatos, casos, agenda e relatórios.
+6. Use a CLI para consultar contatos, casos, agenda e relatórios quando eu pedir.
 
 Nunca peça, imprima, registre ou salve minha chave de API.
 ```
 
-Instruções técnicas para agentes ficam em [AGENTS.md](AGENTS.md). Se o seu agente suporta skills, use também [skills/jurishub-cli/SKILL.md](skills/jurishub-cli/SKILL.md).
+Se o agente não conseguir instalar skills automaticamente, envie também o arquivo [skills/jurishub-cli/SKILL.md](skills/jurishub-cli/SKILL.md). As instruções curtas para colar no projeto ficam em [AGENTS.md](AGENTS.md).
 
 ## Instalação manual
 

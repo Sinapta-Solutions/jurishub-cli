@@ -1,27 +1,21 @@
 # Security
 
-The JurisHUB CLI uses an organization API key for authenticated queries.
+The JurisHUB CLI authenticates with an organization API key managed in JurisHUB.
 
-## API Keys
+## API Key Handling
 
-- The key belongs to the client's organization.
-- The full key value is shown only once when it is created.
-- The key must stay only in the authorized local environment.
-- The key must never be sent in chat, public issues, agent prompts, screenshots, or versioned files.
-- If exposure is suspected, revoke the key in JurisHUB and create a new one.
+- Authenticate with `jurishub login`.
+- The user enters the key locally; agents should not receive it in chat.
+- Do not print, log, store, commit, screenshot, or paste API keys into prompts.
+- Do not pass the key as a command argument.
+- If a key may be exposed, ask the user to revoke it in JurisHUB and create a new one.
 
-## For Agents
+## Client Data
 
-If authentication is needed, ask the user to run:
-
-```bash
-jurishub login
-```
-
-Do not ask for the key directly unless the user explicitly chooses that flow and accepts the risk.
+- Treat CLI output as client data.
+- Do not publish client data, command output, screenshots, or private payloads in public issues or logs.
+- Share only the minimum excerpt needed for support, with sensitive values removed.
 
 ## Reporting
 
 Report security issues through your organization's JurisHUB support channel.
-
-Do not publish API keys, client data, sensitive screenshots, or private payloads in public issues.
