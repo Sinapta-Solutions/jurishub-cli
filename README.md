@@ -26,6 +26,7 @@ https://github.com/Sinapta-Solutions/jurishub-cli
    jurishub login
 
 5. Quando o prompt local aparecer, eu colo a chave de API no meu terminal.
+   A chave não aparece enquanto eu colo ou digito; isso é normal.
    Aguarde eu confirmar que o login terminou. Só depois rode:
    jurishub status
 
@@ -48,7 +49,7 @@ Conecte este computador à sua organização:
 jurishub login
 ```
 
-Quando o prompt aparecer, cole a chave de API no terminal e pressione Enter.
+Quando o prompt aparecer, cole a chave de API no terminal e pressione Enter. Por segurança, a chave não aparece enquanto você cola ou digita.
 
 Confira se está tudo certo:
 

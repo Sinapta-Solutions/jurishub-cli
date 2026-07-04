@@ -12,7 +12,7 @@ Source repository: https://github.com/Sinapta-Solutions/jurishub-cli
 | --- | --- |
 | 1 | Install or load `skills/jurishub-cli/SKILL.md` from the source repository if your environment supports skills. |
 | 2 | Install the CLI with `npm i -g @jurishub/cli`. |
-| 3 | Ask the user to authenticate locally with `jurishub login`; the user pastes the API key only in the terminal prompt. |
+| 3 | Ask the user to authenticate locally with `jurishub login`; the user pastes the API key only in the terminal prompt, where it will not appear on screen. |
 | 4 | Wait for the user to confirm login, then run `jurishub status`. |
 
 ## Operating Rules
