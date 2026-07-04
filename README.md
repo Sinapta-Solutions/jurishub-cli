@@ -4,7 +4,30 @@ Consulte contatos, casos, agenda e relatórios do JurisHUB direto pelo terminal.
 
 Este é o repositório oficial de instalação e uso da CLI pública do JurisHUB. Ele foi feito para clientes, equipes operacionais e agentes de IA que precisam consultar informações do JurisHUB com rapidez, segurança e saída fácil de automatizar.
 
-## Instalação
+## Copie e cole no seu agente
+
+Na maioria dos casos, basta copiar o bloco abaixo e enviar ao agente que vai usar a CLI:
+
+```text
+Você vai usar a CLI oficial do JurisHUB.
+
+1. Instale a CLI:
+   npm i -g @jurishub/cli
+
+2. Depois da instalação, peça para eu autenticar este computador:
+   jurishub login
+
+3. Aguarde eu concluir o login. Só depois rode:
+   jurishub status
+
+4. Use os comandos necessários para consultar contatos, casos, agenda e relatórios.
+
+Nunca peça, imprima, registre ou salve minha chave de API.
+```
+
+Instruções técnicas para agentes ficam em [AGENTS.md](AGENTS.md). Se o seu agente suporta skills, use também [skills/jurishub-cli/SKILL.md](skills/jurishub-cli/SKILL.md).
+
+## Instalação manual
 
 ```bash
 npm i -g @jurishub/cli
@@ -56,29 +79,6 @@ jurishub --help
 - Não acessa conversas, anexos ou mídia do OmniChat.
 - Não acessa billing, faturas, assinaturas ou checkout.
 - Não acessa dados de outra organização.
-
-## Copie e cole no seu agente
-
-Use este texto no agente que vai operar a CLI:
-
-```text
-Você vai usar a CLI oficial do JurisHUB.
-
-1. Instale a CLI com:
-   npm i -g @jurishub/cli
-
-2. Peça para eu autenticar este computador com:
-   jurishub login
-
-3. Só depois que eu concluir o login, rode:
-   jurishub status
-
-4. Use os comandos necessários para consultar contatos, casos, agenda e relatórios.
-
-Nunca peça, imprima, registre ou salve minha chave de API.
-```
-
-Instruções técnicas para agentes ficam em [AGENTS.md](AGENTS.md). Se o seu agente suporta skills, use também [skills/jurishub-cli/SKILL.md](skills/jurishub-cli/SKILL.md).
 
 ## Segurança da chave
 
