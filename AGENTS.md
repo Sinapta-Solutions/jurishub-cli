@@ -20,8 +20,11 @@ Source repository: https://github.com/Sinapta-Solutions/jurishub-cli
 - Use `skills/jurishub-cli/SKILL.md` for command details.
 - Do not request, print, log, store, commit, or screenshot the API key.
 - Do not pass the API key as a command argument.
+- If a key may be exposed, ask the user to revoke it in JurisHUB and create a new one.
 - Treat CLI output as client data.
+- Do not publish client data, command output, screenshots, or private payloads in public issues or logs.
 - Prefer JSON for automation; use `--human` only for user-facing output.
+- Report security issues through the organization's JurisHUB support channel.
 
 ## References
 
@@ -29,4 +32,3 @@ Source repository: https://github.com/Sinapta-Solutions/jurishub-cli
 | --- | --- |
 | Customer setup | `README.md` in the source repository |
 | Command details | `skills/jurishub-cli/SKILL.md` in the source repository |
-| Security handling | `SECURITY.md` in the source repository |
