@@ -25,7 +25,8 @@ https://github.com/Sinapta-Solutions/jurishub-cli
 4. Depois da instalação, peça para eu autenticar este computador:
    jurishub login
 
-5. Aguarde eu confirmar que o login terminou. Só depois rode:
+5. Quando o prompt local aparecer, eu colo a chave de API no meu terminal.
+   Aguarde eu confirmar que o login terminou. Só depois rode:
    jurishub status
 
 6. Use a CLI para consultar contatos, casos, agenda e relatórios quando eu pedir.
@@ -46,6 +47,8 @@ Conecte este computador à sua organização:
 ```bash
 jurishub login
 ```
+
+Quando o prompt aparecer, cole a chave de API no terminal e pressione Enter.
 
 Confira se está tudo certo:
 

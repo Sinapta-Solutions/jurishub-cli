@@ -24,7 +24,7 @@ jurishub login
 jurishub status
 ```
 
-Done when `jurishub status` succeeds.
+`jurishub login` prompts the user locally for the API key. Never ask the user to paste the key into chat or an agent prompt. Done when `jurishub status` succeeds.
 
 ## Rules
 
@@ -78,5 +78,5 @@ Done when the needed response is obtained as JSON, or when you report a clear op
 ## Common Errors
 
 - Expired or revoked key: ask the user to create a new key in JurisHUB.
-- Missing login: ask the user to run `jurishub login`.
+- Missing login: ask the user to run `jurishub login` locally and paste the key only in the terminal prompt.
 - Empty result: confirm name, phone, date range, or filters before assuming an error.
