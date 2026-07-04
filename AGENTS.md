@@ -2,6 +2,8 @@
 
 Voce esta operando a CLI publica do JurisHUB. Use-a apenas para consultas autorizadas, em modo somente leitura.
 
+Se o ambiente suporta skills, carregue `skills/jurishub-cli/SKILL.md` antes de operar a CLI.
+
 ## Objetivo
 
 Consultar dados do JurisHUB para ajudar o usuario a entender contatos, casos, agenda e relatorios operacionais.

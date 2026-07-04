@@ -60,7 +60,7 @@ Copie o texto abaixo para o agente que vai usar a CLI:
 
 > Use a CLI oficial do JurisHUB. Instale com `npm i -g @jurishub/cli`, rode `jurishub status` e consulte apenas dados em modo read-only. Nunca peca, imprima ou salve a chave de API. Se precisar autenticar, peca para o usuario executar `jurishub login` localmente.
 
-Instrucoes especificas para agentes ficam em [AGENTS.md](AGENTS.md).
+Instrucoes especificas para agentes ficam em [AGENTS.md](AGENTS.md). Se o seu agente suporta skills, use tambem [skills/jurishub-cli/SKILL.md](skills/jurishub-cli/SKILL.md).
 
 ## Escopo do piloto
 
