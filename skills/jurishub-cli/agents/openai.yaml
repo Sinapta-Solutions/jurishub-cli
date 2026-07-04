@@ -1,4 +1,4 @@
 interface:
   display_name: "JurisHUB CLI"
-  short_description: "Usar a CLI publica do JurisHUB com seguranca."
-  default_prompt: "Use jurishub-cli para instalar e operar a CLI publica do JurisHUB em modo somente leitura."
+  short_description: "Use the public JurisHUB CLI safely."
+  default_prompt: "Use jurishub-cli to install and operate the public JurisHUB CLI in read-only mode."

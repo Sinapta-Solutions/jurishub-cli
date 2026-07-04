@@ -1,27 +1,27 @@
-# Seguranca
+# Security
 
-A CLI do JurisHUB usa uma chave de API da organizacao para consultas read-only.
+The JurisHUB CLI uses an organization API key for read-only queries.
 
-## Chaves de API
+## API Keys
 
-- A chave pertence a organizacao do cliente.
-- O valor bruto da chave aparece uma unica vez na criacao.
-- A chave deve ficar apenas no ambiente local autorizado.
-- A chave nunca deve ser enviada em chat, issue publica, prompt de agente, print ou arquivo versionado.
-- Se houver suspeita de vazamento, revogue a chave no JurisHUB e gere outra.
+- The key belongs to the client's organization.
+- The full key value is shown only once when it is created.
+- The key must stay only in the authorized local environment.
+- The key must never be sent in chat, public issues, agent prompts, screenshots, or versioned files.
+- If exposure is suspected, revoke the key in JurisHUB and create a new one.
 
-## Para agentes
+## For Agents
 
-Se precisar autenticar, peca para o usuario executar:
+If authentication is needed, ask the user to run:
 
 ```bash
 jurishub login
 ```
 
-Nao solicite a chave diretamente, a menos que o usuario tenha escolhido explicitamente esse fluxo e aceite o risco.
+Do not ask for the key directly unless the user explicitly chooses that flow and accepts the risk.
 
-## Reporte
+## Reporting
 
-Reporte problemas de seguranca pelo canal de suporte JurisHUB usado pela sua organizacao.
+Report security issues through your organization's JurisHUB support channel.
 
-Nao publique chaves, dados de clientes, prints com informacao sensivel ou payloads privados em issues publicas.
+Do not publish API keys, client data, sensitive screenshots, or private payloads in public issues.

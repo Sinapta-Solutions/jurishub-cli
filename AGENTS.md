@@ -1,52 +1,52 @@
-# Instrucoes Para Agentes
+# Instructions For Agents
 
-Voce esta operando a CLI publica do JurisHUB. Use-a apenas para consultas autorizadas, em modo somente leitura.
+You are operating the public JurisHUB CLI. Use it only for authorized read-only queries.
 
-Se o ambiente suporta skills, carregue `skills/jurishub-cli/SKILL.md` antes de operar a CLI.
+If your environment supports skills, load `skills/jurishub-cli/SKILL.md` before operating the CLI.
 
-## Objetivo
+## Goal
 
-Consultar dados do JurisHUB para ajudar o usuario a entender contatos, casos, agenda e relatorios operacionais.
+Use the JurisHUB CLI to help the user inspect contacts, cases, agenda items, and operational reports.
 
-Nao tente administrar o JurisHUB por esta CLI. Ela nao e uma interface de escrita.
+Do not try to administer JurisHUB through this CLI. It is not a write interface.
 
 ## Setup
 
-1. Verifique Node.js e npm.
-2. Instale a CLI:
+1. Check that Node.js and npm are available.
+2. Install the CLI:
 
 ```bash
 npm i -g @jurishub/cli
 ```
 
-3. Peca para o usuario autenticar localmente:
+3. Ask the user to authenticate locally:
 
 ```bash
 jurishub login
 ```
 
-4. Confirme que a conexao esta funcionando:
+4. Confirm the connection:
 
 ```bash
 jurishub status
 ```
 
-## Regras de seguranca
+## Security Rules
 
-- Nunca peca a chave de API em chat se o usuario puder rodar `jurishub login`.
-- Nunca salve a chave em repo, documento, log, print ou arquivo compartilhado.
-- Nunca passe a chave como argumento de comando.
-- Nunca tente contornar permissao, tenant, rate limit ou erro de autorizacao.
-- Use somente comandos read-only.
-- Prefira JSON para automacao.
-- Use `--human` apenas quando for mostrar o resultado para uma pessoa.
+- Do not ask for the API key in chat when the user can run `jurishub login`.
+- Do not save the API key in a repository, document, log, screenshot, or shared file.
+- Do not pass the API key as a command argument.
+- Do not try to bypass permissions, tenant isolation, rate limits, or authorization errors.
+- Use read-only commands only.
+- Prefer JSON for automation.
+- Use `--human` only when showing output to a person.
 
-## Comandos permitidos
+## Allowed Commands
 
 ```bash
 jurishub status
 jurishub contatos listar
-jurishub contatos buscar "<nome-ou-telefone>"
+jurishub contatos buscar "<name-or-phone>"
 jurishub contatos ver <id>
 jurishub casos listar
 jurishub casos ver <id>
@@ -61,23 +61,23 @@ jurishub relatorio receita
 jurishub relatorio fontes
 ```
 
-## Fluxo recomendado
+## Recommended Flow
 
 ```bash
 jurishub status
-jurishub contatos buscar "Nome do cliente"
+jurishub contatos buscar "Client name"
 jurishub casos listar
 jurishub agenda listar
 jurishub relatorio
 ```
 
-Se `contatos buscar` retornar muitos itens, peca mais contexto antes de abrir um detalhe por ID.
+If `contatos buscar` returns many items, ask for more context before opening a detail by ID.
 
-## Fora do escopo
+## Out Of Scope
 
-- Criar, alterar ou excluir dados.
-- Enviar mensagens.
-- Consultar conversas, anexos ou midia.
-- Consultar billing, faturas, assinatura ou checkout.
-- Usar MCP.
-- Fazer scraping, fuzzing, carga ou teste de abuso.
+- Creating, changing, or deleting data.
+- Sending messages.
+- Reading conversations, attachments, or media.
+- Reading billing, invoices, subscriptions, or checkout data.
+- Using MCP.
+- Running scraping, fuzzing, load, or abuse tests.
