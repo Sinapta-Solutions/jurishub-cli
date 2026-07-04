@@ -26,10 +26,13 @@ jurishub status
 
 `jurishub login` prompts the user locally for the API key. The key is hidden while the user pastes or types it; that is expected. Never ask the user to paste the key into chat or an agent prompt. Done when `jurishub status` succeeds.
 
+The CLI uses the official JurisHUB API by default. Do not ask the user for an API URL. Set `JURISHUB_BASE_URL` only when JurisHUB support explicitly provides an alternate host.
+
 ## Rules
 
 - Never save or print the API key.
 - Never pass the API key as a command argument.
+- Never ask the user for an API host unless troubleshooting instructions from JurisHUB require one.
 - Never try to bypass permissions, tenant isolation, rate limits, or authorization errors.
 - Prefer JSON for automation.
 - Use `--human` only for human-readable output.

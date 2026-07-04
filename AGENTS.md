@@ -20,6 +20,8 @@ Source repository: https://github.com/Sinapta-Solutions/jurishub-cli
 - Use `skills/jurishub-cli/SKILL.md` for command details.
 - Do not request, print, log, store, commit, or screenshot the API key.
 - Do not pass the API key as a command argument.
+- Do not ask the user for an API URL. The CLI uses the official JurisHUB API by default.
+- Set `JURISHUB_BASE_URL` only when JurisHUB support explicitly provides an alternate host.
 - If a key may be exposed, ask the user to revoke it in JurisHUB and create a new one.
 - Treat CLI output as client data.
 - Do not publish client data, command output, screenshots, or private payloads in public issues or logs.

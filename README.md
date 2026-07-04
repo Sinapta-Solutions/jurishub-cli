@@ -43,6 +43,8 @@ Se o agente não conseguir instalar skills automaticamente, envie também o arqu
 npm i -g @jurishub/cli
 ```
 
+A CLI já usa a API oficial do JurisHUB. Você não precisa configurar URL.
+
 Conecte este computador à sua organização:
 
 ```bash
@@ -58,6 +60,8 @@ jurishub status
 ```
 
 O login pede a chave de API no terminal. Não envie a chave por chat, prompt de agente, argumento de comando, print, issue pública ou arquivo compartilhado.
+
+Use `JURISHUB_BASE_URL` apenas se o suporte do JurisHUB orientar você a usar outro endereço.
 
 ## Primeiros comandos
 
