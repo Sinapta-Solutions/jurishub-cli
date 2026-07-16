@@ -1,4 +1,4 @@
 interface:
   display_name: "JurisHUB CLI"
-  short_description: "Set up and use the public JurisHUB CLI safely."
-  default_prompt: "Use jurishub-cli to set up project instructions, authenticate locally, and operate the public JurisHUB CLI."
+  short_description: "Read and change authorized JurisHUB data safely."
+  default_prompt: "Use jurishub-cli to authenticate locally and safely read or change authorized JurisHUB contacts, cases, pipeline, agenda, team, OmniChat state, and agent configuration."
