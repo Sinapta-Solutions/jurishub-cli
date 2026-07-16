@@ -4,6 +4,8 @@ Consulte e administre contatos, casos, pipeline, agenda e equipe do JurisHUB dir
 
 Este é o repositório oficial de instalação e uso da CLI pública do JurisHUB. Ele foi feito para clientes, equipes operacionais e agentes de IA que precisam trabalhar com informações do JurisHUB com rapidez, segurança e saída fácil de automatizar.
 
+Consulte também [instalação e verificação de checksum](INSTALL.md), [licença](LICENSE), [avisos legais](NOTICE) e [reporte privado de segurança](SECURITY.md).
+
 ## Copie e cole no seu agente
 
 Na maioria dos casos, basta copiar o bloco abaixo e enviar ao agente que vai usar a CLI:
@@ -27,8 +29,8 @@ https://github.com/Sinapta-Solutions/jurishub-cli
 
 5. Quando o prompt local aparecer, eu colo a chave de API no meu terminal.
    A chave não aparece enquanto eu colo ou digito; isso é normal.
-   Aguarde eu confirmar que o login terminou. Só depois rode:
-   jurishub status
+   Aguarde eu confirmar que o login terminou. Só depois rode `jurishub status`
+   e um comando de leitura permitido pela chave para validar o acesso de ponta a ponta.
 
 6. Use a CLI para consultar ou alterar dados somente quando eu pedir.
    Antes de excluir ou mesclar algo, explique o efeito e peça minha confirmação.
@@ -62,6 +64,8 @@ Confira se está tudo certo:
 ```bash
 jurishub status
 ```
+
+Esse comando confirma configuração e alcance da API. Para validar a chave de ponta a ponta, execute também um comando de leitura permitido pelos escopos dela, como `jurishub contatos listar` em uma chave padrão de leitura.
 
 O login pede a chave de API no terminal. Não envie a chave por chat, prompt de agente, argumento de comando, print, issue pública ou arquivo compartilhado.
 
@@ -105,15 +109,26 @@ As ações disponíveis dependem das permissões escolhidas ao criar a chave. Um
 ## Exemplos de escrita
 
 ```bash
-jurishub contatos criar --dados '{"name":"Maria","phone":"5511999999999"}'
+jurishub contatos criar --dados -
 jurishub casos criar --dados @caso.json
-jurishub casos mover <case-id> --dados '{"stage_id":"<column-id>"}'
+jurishub casos mover <case-id> --dados @movimentacao.json
 jurishub pipeline clientes criar --dados @cliente.json
 jurishub agenda criar --dados @evento.json
 jurishub agentes config-atualizar --dados @configuracao.json
 ```
 
-Use `--dados @arquivo.json` para evitar JSON grande no histórico do terminal. Operações destrutivas exigem `--yes` e devem ser executadas somente após confirmação consciente do usuário.
+Prefira `--dados -` para dados de clientes. Cole o JSON e encerre a entrada com `Ctrl+D` no macOS/Linux ou `Ctrl+Z` seguido de Enter no Windows. Assim, nomes, telefones e detalhes de casos não ficam no histórico do terminal.
+
+Se usar `--dados @arquivo.json`, mantenha o arquivo fora de pastas sincronizadas, restrinja o acesso ao seu usuário e apague-o depois. Operações destrutivas exigem `--yes` e devem ser executadas somente após confirmação consciente do usuário.
+
+## Permissões da chave
+
+- Chaves somente de leitura podem durar até 180 dias.
+- Chaves com escrita comum podem durar até 30 dias e só podem ser criadas pelo proprietário da organização.
+- Exclusão de contato, mesclagem, exclusão de coluna, exclusão de evento e exclusão de membro exigem uma chave exclusiva para um único escopo, válida por no máximo 24 horas.
+- Cada organização pode manter no máximo duas chaves ativas.
+
+A tabela completa de comandos e escopos está em [skills/jurishub-cli/SKILL.md](skills/jurishub-cli/SKILL.md#permission-matrix).
 
 ## O que a CLI não faz
 
@@ -149,3 +164,13 @@ As consultas V1 continuam disponíveis durante o rollout. Os comandos de escrita
 - Organização inadimplente: regularize a assinatura; a mesma chave válida volta a funcionar após a reativação.
 - Permissão insuficiente: crie uma chave com o escopo exato necessário. Não tente contornar o bloqueio.
 - Escrita temporariamente indisponível: aguarde a conclusão do rollout da API V2 ou fale com o suporte do JurisHUB.
+
+## Instalação por arquivo
+
+Se npm não estiver disponível, baixe o arquivo da sua plataforma e `checksums.txt` na mesma GitHub Release. Siga a verificação SHA256 detalhada em [INSTALL.md](INSTALL.md) antes de extrair ou executar o binário.
+
+## Segurança e licença
+
+Não publique chaves, payloads ou dados de clientes em issues. Para vulnerabilidades ou suspeita de vazamento, siga [SECURITY.md](SECURITY.md).
+
+Este projeto é distribuído sob a [Apache License 2.0](LICENSE). Consulte também [NOTICE](NOTICE).
